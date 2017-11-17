@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour {
 	public float speed=0.03f;
+	public float jump=1.5f;
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("HELLO");
@@ -13,19 +14,23 @@ public class player : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey ("w"))
 		{
-			transform.position +=	new Vector3(0,0,speed);
+			GetComponent<Rigidbody>().AddForce(new Vector3(0,0,speed));
 		}
 		if (Input.GetKey ("s"))
 		{
-			transform.position +=	new Vector3(0,0,-speed);
+			GetComponent<Rigidbody>().AddForce(new Vector3(0,0,-speed));
 		}
 		if (Input.GetKey ("a"))
 		{
-			transform.position +=	new Vector3(-speed,0,0);
+			GetComponent<Rigidbody>().AddForce(new Vector3(-speed,0,0));
 		}
 		if (Input.GetKey ("d"))
 		{
-			transform.position +=	new Vector3(speed,0,0);
+			GetComponent<Rigidbody>().AddForce(new Vector3(speed,0,0));
+		}
+		if (Input.GetKeyDown ("space"))
+		{
+			GetComponent<Rigidbody>().AddForce(new Vector3(0,jump,0));
 		}
 	}
 }
