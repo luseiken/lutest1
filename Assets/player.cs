@@ -14,23 +14,31 @@ public class player : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey ("w"))
 		{
-			GetComponent<Rigidbody>().AddForce(new Vector3(0,0,speed));
+			GetComponent<Rigidbody>().velocity=transform.forward*(1+speed);
 		}
 		if (Input.GetKey ("s"))
 		{
-			GetComponent<Rigidbody>().AddForce(new Vector3(0,0,-speed));
+			GetComponent<Rigidbody>().velocity=-transform.forward*(1+speed);
 		}
 		if (Input.GetKey ("a"))
 		{
-			GetComponent<Rigidbody>().AddForce(new Vector3(-speed,0,0));
+			GetComponent<Rigidbody>().velocity=new Vector3(-speed,0,0);
 		}
 		if (Input.GetKey ("d"))
 		{
-			GetComponent<Rigidbody>().AddForce(new Vector3(speed,0,0));
+			GetComponent<Rigidbody>().velocity=new Vector3(speed,0,0);
 		}
 		if (Input.GetKeyDown ("space"))
 		{
 			GetComponent<Rigidbody>().AddForce(new Vector3(0,jump,0));
+		}
+		if (Input.GetKey ("e"))
+		{
+			transform.Rotate (0, 1, 0);
+		}
+		if (Input.GetKey ("q"))
+		{
+			transform.Rotate (0, -1, 0);
 		}
 	}
 }
