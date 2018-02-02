@@ -5,6 +5,8 @@ using UnityEngine;
 public class player : MonoBehaviour {
 	public float speed=0.03f;
 	public float jump=1.5f;
+
+
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("HELLO");
@@ -12,9 +14,10 @@ public class player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (Input.GetKey ("w"))
 		{
-			GetComponent<Rigidbody>().velocity=transform.forward*(1+speed);
+			GetComponent<Rigidbody>().velocity+=transform.forward*0.5f;
 		}
 		if (Input.GetKey ("s"))
 		{
