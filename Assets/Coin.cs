@@ -21,9 +21,12 @@ public class Coin : MonoBehaviour
         Debug.Log(other.transform.name);
         if (other.transform.name == "head")
         {
-            HP -= 3;
+            //這一段要注意 是招喚在playerHead裡面地定義的Atk指令
+            HP -= other.transform.GetComponent<playerHead>().Atk;
             if (HP <= 0)
-            { Destroy(gameObject); }
+            {
+                Destroy(gameObject);
+            }
 
         }
     }

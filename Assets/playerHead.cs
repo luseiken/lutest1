@@ -8,6 +8,8 @@ public class playerHead : MonoBehaviour
     // Use this for initialization
     public float speed = 0.03f;
     public float jump = 1.5f;
+
+    public int Atk = 3;
     void Start()
     {
 
