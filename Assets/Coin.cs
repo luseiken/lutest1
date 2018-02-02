@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour {
+public class Coin : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	void OnCollisionEnter(Collision other)
-	{
-		Debug.Log (other.transform.name);
-		if (other.transform.name == "head") 
-		{
-			Destroy (gameObject);
-		}
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log(other.transform.name);
+        if (other.transform.name == "head")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
