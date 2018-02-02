@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
 
-    // Use this for initialization
+    public int HP = 10;
     void Start()
     {
 
@@ -21,7 +21,10 @@ public class Coin : MonoBehaviour
         Debug.Log(other.transform.name);
         if (other.transform.name == "head")
         {
-            Destroy(gameObject);
+            HP -= 3;
+            if (HP <= 0)
+            { Destroy(gameObject); }
+
         }
     }
 }
