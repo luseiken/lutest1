@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
 	{
 		Debug.Log (other.transform.name);
-		if (other.transform.name == "player") 
+		if (other.transform.name == "head") 
 		{
 			Destroy (gameObject);
 		}
